@@ -8,9 +8,10 @@ import lombok.Data;
 public class CompleteVolunteeringCommand {
 
     private Long volunteeringId;
-    private Address place;
+    private String place;
     private Date schedule;
     private String title;
     private String category;
     private Integer personnel;
+    private String status;
 }

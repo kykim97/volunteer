@@ -48,28 +48,17 @@ public class VolunteerHistory {
     }
 
     //<<< Clean Arch / Port Method
-    public static void addVolunteerHistory(
-        VolunteeringCompleted volunteeringCompleted
-    ) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        VolunteerHistory volunteerHistory = new VolunteerHistory();
-        repository().save(volunteerHistory);
-
-        */
-
-        /** Example 2:  finding and process
+    public static void addVolunteerHistory(VolunteeringCompleted volunteeringCompleted) {
         
+        VolunteerHistory volunteerHistory = new VolunteerHistory();
+        volunteerHistory.setUserId(volunteeringCompleted.getUserId());
+        volunteerHistory.setPlace(volunteeringCompleted.getPlace());
+        volunteerHistory.setSchedule(volunteeringCompleted.getSchedule());
+        volunteerHistory.setTitle(volunteeringCompleted.getTitle());
+        volunteerHistory.setCategory(volunteeringCompleted.getCategory());
+        volunteerHistory.setPersonnel(volunteeringCompleted.getPersonnel());
 
-        repository().findById(volunteeringCompleted.get???()).ifPresent(volunteerHistory->{
-            
-            volunteerHistory // do something
-            repository().save(volunteerHistory);
-
-
-         });
-        */
+        repository().save(volunteerHistory);
 
     }
     //>>> Clean Arch / Port Method
